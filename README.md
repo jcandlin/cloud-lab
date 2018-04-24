@@ -26,7 +26,7 @@ Resources that will be created:
 ~~~
 access_key = "YOUR_AWS_ACCESS_KEY"
 secret_key = "YOUR_AWS_SECRET_ACCESS_KEY"
-# Select among following: us-west-1 us-east-1 ap-southeast-1 eu-central-1 , 
+# Select among following: us-west-1 us-west-2 etc, etc. 
 region = "YOUR_REGION"
 # Add contents of your public key below
 aws_public_key = "CONTENTS_OF_YOUR_PUBLIC_KEY" 
