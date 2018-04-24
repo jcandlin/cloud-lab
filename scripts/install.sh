@@ -35,13 +35,13 @@ if [[ "$1" == "0" ]]; then
 #
 # Once server is up, run API via container to create project and generate token
 #
-    docker run -e "RANCHER_SERVER_IP=$2" -e "STEP=all" -e "RANCHER_PROJECT_ID=${RANCHER_PROJECT_ID}" harshals/rsapi
+    docker run -e "RANCHER_SERVER_IP=$2" -e "STEP=all" -e "RANCHER_PROJECT_ID=${RANCHER_PROJECT_ID}" jcandlin/api
 
 else
 #
-# Run rsapi container in agent mode to generate token and run it
+# Run api container in agent mode to generate token and run it
 #
-    cmd=$(docker run -e "RANCHER_SERVER_IP=$2" -e "STEP=6" -e "RANCHER_PROJECT_ID=${RANCHER_PROJECT_ID}" harshals/rsapi | tail -n 1);
+    cmd=$(docker run -e "RANCHER_SERVER_IP=$2" -e "STEP=6" -e "RANCHER_PROJECT_ID=${RANCHER_PROJECT_ID}" jcandlin/api | tail -n 1);
 	if [[ "$(echo $cmd | cut -c 1-11)" == "sudo docker" ]]; then
 	    eval $cmd;
 	else
